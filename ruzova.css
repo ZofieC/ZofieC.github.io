@@ -1,0 +1,30 @@
+h1 {
+    background-color: #DDEEFF;
+    color: #443322;
+    border: 1px solid #443322;
+    text-align: center;
+}
+#menu{
+    background-color: mediumseagreen;
+    border: 1px solid seagreen;
+}
+main > div {
+    background-color: lightpink;
+    border: 1px solid hotpink;
+}
+ul ul li {
+    color: gray;
+}
+.text {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.jacquarda-bastarda-9-regular {
+    font-family: "Jacquarda Bastarda 9", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+body {
+    background-image: url("https://images.squarespace-cdn.com/content/v1/63b7d1efe55b617b444d3a36/19fb0da2-c351-4388-a272-f8bfadcfaf93/DSC_1305_DxO-1.jpg?format=2500w");
+}
+td{
+    border: 1px solid black;

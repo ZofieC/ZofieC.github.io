@@ -1,0 +1,110 @@
+body, h1 {
+    margin: 0;
+    padding: 0;
+}
+header  {
+    background-color: hsl(280, 90%, 90%);
+    color: hsl(280, 90%, 20%);
+}
+header h1 {
+    padding: 10px;
+}
+#menu {
+    background-color: hsl(10, 90%, 90%);
+}
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul li a {
+    text-align: center;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: hsl(10, 90%, 10%);
+}
+#menu ul li a:hover {
+    background-color: hsl(10, 90%, 20%);
+    color: hsl(10, 90%, 90%);
+}
+
+#menu ul {
+    display: flex;
+}
+.container {
+    display: flex;
+}
+.container .item {
+    flex-basis: 25%;
+    /*position: relative;*/
+
+}
+.container .item p {
+    position: absolute;
+    left:0;
+    right:0;
+    display: none;
+}
+.container .item:hover p {
+    display: block;
+}
+.gallery {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto;
+    gap: 40px;
+}
+.gallery .image {
+    position: relative;
+}
+.gallery .image p {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    right:0;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+}
+.stick {
+    position: sticky;
+    top:0;
+    z-index: 10;
+}
+
+@media screen and (max-width: 1000px) {
+    .gallery {
+        grid-template-columns: auto auto;
+    }
+}
+@media screen and (max-width: 700px) {
+    .gallery {
+        grid-template-columns: auto;
+    }
+}
+
+.container .item:nth-child(1) h2 {  background-color: hsl(100, 90%, 20%); }
+.container .item:nth-child(1) p {   background-color: hsl(100, 90%, 90%); }
+.container .item:nth-child(2) h2 {  background-color: hsl(190, 90%, 20%); }
+.container .item:nth-child(2) p {   background-color: hsl(190, 90%, 90%); }
+.container .item:nth-child(3) h2 {  background-color: hsl(280, 90%, 20%); }
+.container .item:nth-child(3) p {   background-color: hsl(280, 90%, 90%); }
+.container .item:nth-child(4) h2 {  background-color: hsl(10, 90%, 20%); }
+.container .item:nth-child(4) p {   background-color: hsl(10, 90%, 90%); }
+
+.image {
+    border: 1px solid black;
+    width: 300px;
+}
+.image img {
+    display: block;
+    width:100%;
+}
+.image p {
+    margin: 0;
+    padding: 10px;
+}
+
+

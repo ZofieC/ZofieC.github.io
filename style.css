@@ -1,0 +1,98 @@
+
+body{
+    background-color: rgb(43, 42, 42);
+    color: rgb(200, 200, 200);
+}
+.uvod{
+    background-image: url(https://www.theprp.com/wp-content/uploads/2022/01/ghostlive2022-830x350-1.jpg);
+}
+h1{
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+td{
+    border: 1px solid rgb(140, 140, 140);
+    
+    text-indent: 10px;
+}
+#odkaz{
+    background-color: gray;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.bona-nova-sc-regular {
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.opus{
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(102, 208, 230); 
+    background-color: rgb(140, 140, 140);
+    border: 2px dotted rgb(102, 208, 230);
+}
+.infestissumam{
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(85, 4, 27);
+    background-color: rgb(255, 157, 0);
+    border: 1px solid rgb(85, 4, 27);
+}
+.meliora{
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(98, 142, 128);
+    background-color: rgb(65, 33, 14);
+    border: 3px dashed rgb(98, 142, 128);
+}
+.nadpis{
+    font-family: "Bona Nova SC", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-left: 10px;
+    padding-top: 30px;
+}
+.ghoulove{
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid gray;
+
+}
+.ghoulove .ghoul{
+    min-width: 150px;
+    flex-grow: 1;
+}
+
+.ghoulove .ghoul h3 {
+    color: white;
+    margin: 0;
+    padding: 10px;
+}
+.ghoulove .ghoul ul {
+    text-indent: 2em;
+    margin: 0;
+    padding: 10px;
+}
+@media all and (max-width:500px){
+    .ghoulove .ghoul{
+        flex-basis: 25%;
+    }
+}
+@media all and (max-width:1000px){
+    .ghoulove .ghoul{
+        flex-basis: 50%;
+    }
+}
+.ghoulove .ghoul:nth-child(1) h3 {background-color: hsl(0, 91%, 29%); }
+.ghoulove .ghoul:nth-child(1) ul {background-color: hsl(0, 100%, 12%); }
+.ghoulove .ghoul:nth-child(2) h3 {background-color: hsl(211, 91%, 25%); }
+.ghoulove .ghoul:nth-child(2) ul {background-color: hsl(218, 100%, 13%); }
+.ghoulove .ghoul:nth-child(3) h3 {background-color: hsl(280, 89%, 28%); }
+.ghoulove .ghoul:nth-child(3) ul {background-color: hsl(280, 100%, 13%); }
