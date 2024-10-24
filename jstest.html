@@ -2,38 +2,47 @@
 <html>
     <head>
         <title>JS test</title>
+        <style>
+            .item{
+                background-color: aliceblue;
+                border: 1px solid blue;
+
+            }
+        </style>
     </head>
 
     <body>
+        <input type =  "button" id = "tlacitko" value="TEST"/>
+        <input type="text" id = "vstup" value = ""/>
         <div id = "test"></div>
         <script>
-            console.log("Hello world");
-            let el = document.getElementById("test");
-            el.innerHTML = "<strong>HELLO WORLD</strong>";
-
-            let a = 2;
-            let b = "2";
-            console.log(typeof(a))
-            console.log(typeof(b))
-
-            console.log(a+a)
-            console.log(a+b)
-            let arr = ["jedna", "dva", "tri"];
-            console.log(arr);
-
-            for (let i = 0; i < arr.length; i++) {
-                console.log(i + " : " + arr[i]);
+            function remove (element) {
+                element.parentNode.removeChild(element);
             }
+            function novy(event) {
+                console.log("Hello World");
+                debugger;
+                let el =  document.getElementById("test");
+                
+                let inp = document.getElementById("vstup");
 
-            let div = document.createElement("div");
-            div.innerHTML = "pokus";
-            el.appendChild(div);
-
-            for (let i = 0; i < arr.length; i++) {
                 let div = document.createElement("div");
-                div.innerHTML = arr[i];
+                div.classList.add("item");
+                div.innerHTML = inp.value;
+
+                let divClose = document.createElement("div");
+                divClose.innerHTML = "delete";
+                div.addEventListener("click", (event) => {
+                    remove(div);
+                })
+
+                div.appendChild(divClose);
+
                 el.appendChild(div);
             }
+
+            let tlacitko = document.getElementById("tlacitko");
+            tlacitko.addEventListener("click",novy);
         </script>
     </body>
 </html>
