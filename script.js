@@ -1,29 +1,70 @@
-const gameDiv = document.getElementById("game");
 
-const symbols = ["♠", "♣", "♥", "♦", "♤", "♧", "♡", "♢", "♠", "♣", "♥", "♦", "♤", "♧", "♡", "♢"];
 
-for (let i = 0; i < 16; i++) {
-    const flipCardDiv = document.createElement("div");
-flipCardDiv.classList.add("flip-card");
+const gameDiv = document.getElementById('game');
 
-const flipCardInnerDiv = document.createElement("div");
-flipCardInnerDiv.classList.add("flip-card-inner");
-flipCardDiv.appendChild(flipCardInnerDiv);
+// Create 16 pexeso cards
+function createCard(symbol) {
+    for (let i = 0; i < 16; i++) {
+        const flipCardContainer = document.createElement('div');
+        flipCardContainer.classList.add('flip-card');
 
-const flipCardFrontDiv = document.createElement("div");
-flipCardFrontDiv.classList.add("flip-card-front");
-flipCardInnerDiv.appendChild(flipCardFrontDiv);
+        const flipCardInner = document.createElement('div');
+        flipCardInner.classList.add('flip-card-inner');
 
-const frontParagraph = document.createElement("p");
-frontParagraph.textContent = "predek";
-flipCardFrontDiv.appendChild(frontParagraph);
+        const flipCardFront = document.createElement('div');
+        flipCardFront.classList.add('flip-card-front');
+        flipCardFront.textContent = 'Pex';
 
-const flipCardBackDiv = document.createElement("div");
-flipCardBackDiv.classList.add("flip-card-back");
-flipCardInnerDiv.appendChild(flipCardBackDiv);
+        const flipCardBack = document.createElement('div');
+        flipCardBack.classList.add('flip-card-back');
+        flipCardBack.textContent = symbol;
 
-const backParagraph = document.createElement("p");
-backParagraph.textContent = "zadek";
-flipCardBackDiv.appendChild(backParagraph);
-gameDiv.appendChild(flipCardDiv);
+        flipCardInner.appendChild(flipCardFront);
+        flipCardInner.appendChild(flipCardBack);
+
+        flipCardContainer.appendChild(flipCardInner);
+
+        gameDiv.appendChild(flipCardContainer);
+
+        return flipCardContainer;
+    }
 }
+const symbols = ['🌞', '🌈', '🍕', '🎉',
+    '🐶', '🌸', '🌊', '🎮', '🍦', '🎵', '🚀', '📚', '⚽', '🍔', '🎈', '🐱'];
+
+const size = 8;
+const selectedSymbols = symbols.slice(0, size);
+const doubleSymbols = selectedSymbols.concat(selectedSymbols);
+const shuffledSymbols = doubleSymbols.sort(() => Math.random() - 0.5);
+const flippedCards = [];
+
+
+for (let i = 0; i < 2 * size; i++) {
+    let card = createCard(shuffeldSymbols[i]);
+    card.addEventListener('click', function() { 
+        if(flippedCards.length < 2) {
+            card.classList.add('flipped');
+            flippedCards.push(card);
+            card.classList.add('flipped');
+        }
+    
+
+        if(flippedCards.length === 2) { 
+            if(flippedCards[0].textContent === flippedCards[1].textContent) {
+                for (let i = 0; i < flippedCards.length; i++) {
+                flippedCards[i].classList.add('found');
+                } 
+            } else {
+                setTimeout(function() {
+                    for (let i = 0; i < flippedCards.length; i++) {
+                    flippedCards[i].classList.remove('flipped');
+                    }
+                }, 1000);
+            flippedCards = [];
+            }
+        } 
+    });
+}
+
+       
+    
